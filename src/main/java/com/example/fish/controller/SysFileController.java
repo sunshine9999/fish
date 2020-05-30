@@ -1,8 +1,8 @@
 package com.example.fish.controller;
 
-import com.example.fish.api.DemoApi;
-import com.example.fish.model.Demo;
-import com.example.fish.service.DemoService;
+import com.example.fish.api.SysFileApi;
+import com.example.fish.model.SysFile;
+import com.example.fish.service.SysFileService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,15 +11,15 @@ import java.util.List;
 
 @Slf4j
 @RestController
-public class SysFileController implements DemoApi {
+public class SysFileController implements SysFileApi {
 
     @Resource
-    private DemoService demoService;
+    private SysFileService sysFileService;
 
     @Override
-    public List<Demo> getAll() {
+    public List<SysFile> getAll() {
         try {
-            return demoService.getAll();
+            return sysFileService.getAll();
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -27,9 +27,9 @@ public class SysFileController implements DemoApi {
     }
 
     @Override
-    public Demo getById(String id) {
+    public SysFile getById(String id) {
         try {
-            return demoService.getById(id);
+            return sysFileService.getById(id);
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -37,9 +37,9 @@ public class SysFileController implements DemoApi {
     }
 
     @Override
-    public Demo saveDemo(Demo demo) {
+    public SysFile saveSysFile(SysFile sysFile) {
         try {
-            return demoService.saveDemo(demo);
+            return sysFileService.saveSysFile(sysFile);
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -47,9 +47,9 @@ public class SysFileController implements DemoApi {
     }
 
     @Override
-    public void delDemo(String id) {
+    public void delSysFile(String id) {
         try {
-            demoService.delDemo(id);
+            sysFileService.delSysFile(id);
         }catch (Exception e){
             e.printStackTrace();
         }

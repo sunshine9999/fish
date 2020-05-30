@@ -1,8 +1,8 @@
 package com.example.fish.controller;
 
-import com.example.fish.api.DemoApi;
-import com.example.fish.model.Demo;
-import com.example.fish.service.DemoService;
+import com.example.fish.api.SysDragonApi;
+import com.example.fish.model.SysDragon;
+import com.example.fish.service.SysDragonService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,15 +11,15 @@ import java.util.List;
 
 @Slf4j
 @RestController
-public class SysDragonController implements DemoApi {
+public class SysDragonController implements SysDragonApi {
 
     @Resource
-    private DemoService demoService;
+    private SysDragonService sysDragonService;
 
     @Override
-    public List<Demo> getAll() {
+    public List<SysDragon> getAll() {
         try {
-            return demoService.getAll();
+            return sysDragonService.getAll();
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -27,9 +27,9 @@ public class SysDragonController implements DemoApi {
     }
 
     @Override
-    public Demo getById(String id) {
+    public SysDragon getById(String id) {
         try {
-            return demoService.getById(id);
+            return sysDragonService.getById(id);
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -37,9 +37,9 @@ public class SysDragonController implements DemoApi {
     }
 
     @Override
-    public Demo saveDemo(Demo demo) {
+    public SysDragon saveSysDragon(SysDragon sysDragon) {
         try {
-            return demoService.saveDemo(demo);
+            return sysDragonService.saveSysDragon(sysDragon);
         }catch (Exception e){
             e.printStackTrace();
             return null;
@@ -47,9 +47,9 @@ public class SysDragonController implements DemoApi {
     }
 
     @Override
-    public void delDemo(String id) {
+    public void delSysDragon(String id) {
         try {
-            demoService.delDemo(id);
+            sysDragonService.delSysDragon(id);
         }catch (Exception e){
             e.printStackTrace();
         }
