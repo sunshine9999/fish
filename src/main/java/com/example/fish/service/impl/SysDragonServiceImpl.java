@@ -4,16 +4,11 @@ import com.example.fish.model.SysDragon;
 import com.example.fish.repository.SysDragonDao;
 import com.example.fish.service.SysDragonService;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 @Service
 public class SysDragonServiceImpl implements SysDragonService {

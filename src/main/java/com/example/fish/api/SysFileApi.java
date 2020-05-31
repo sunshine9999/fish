@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
-
 @Api(value = "sysFile", tags = "sysFile")
 @RequestMapping(path = "/biz-api/fish/sysFile/v1/info")
 public interface SysFileApi {

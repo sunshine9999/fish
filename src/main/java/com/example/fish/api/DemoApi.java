@@ -4,7 +4,6 @@ import com.example.fish.model.Demo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @Api(value = "demo", tags = "demo")

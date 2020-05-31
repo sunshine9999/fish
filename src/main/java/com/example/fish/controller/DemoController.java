@@ -5,7 +5,6 @@ import com.example.fish.model.Demo;
 import com.example.fish.service.DemoService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.annotation.Resource;
 import java.util.List;
 

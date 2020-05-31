@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
-
 @Api(value = "sysDragon", tags = "sysDragon")
 @RequestMapping(path = "/biz-api/fish/sysDragon/v1/info")
 public interface SysDragonApi {

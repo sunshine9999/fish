@@ -1,6 +1,5 @@
 package com.example.fish.start;
 
-import com.example.fish.start.FishApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 

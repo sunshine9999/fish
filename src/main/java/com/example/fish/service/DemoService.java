@@ -1,8 +1,6 @@
 package com.example.fish.service;
 
 import com.example.fish.model.Demo;
-import org.springframework.data.jpa.repository.JpaRepository;
-
 import java.util.List;
 
 public interface DemoService{
