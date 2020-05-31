@@ -4,6 +4,8 @@ import com.example.fish.api.SysDragonApi;
 import com.example.fish.model.SysDragon;
 import com.example.fish.service.SysDragonService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -17,9 +19,9 @@ public class SysDragonController implements SysDragonApi {
     private SysDragonService sysDragonService;
 
     @Override
-    public List<SysDragon> getAll() {
+    public Page<SysDragon> getAll(Pageable pageable) {
         try {
-            return sysDragonService.getAll();
+            return sysDragonService.getAll(pageable);
         }catch (Exception e){
             e.printStackTrace();
             return null;

@@ -1,12 +1,12 @@
 package com.example.fish.service;
 
 import com.example.fish.model.SysFile;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface SysFileService {
 
-    public List<SysFile> getAll() throws Exception;
+    public Page<SysFile> getAll(Pageable pageable) throws Exception;
     public SysFile saveSysFile(SysFile file) throws Exception;
     public SysFile getById(String id) throws Exception;
     public void delSysFile(String id) throws Exception;

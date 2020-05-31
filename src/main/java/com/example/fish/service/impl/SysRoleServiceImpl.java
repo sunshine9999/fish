@@ -3,6 +3,8 @@ package com.example.fish.service.impl;
 import com.example.fish.model.SysRole;
 import com.example.fish.repository.SysRoleDao;
 import com.example.fish.service.SysRoleService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,8 +21,8 @@ public class SysRoleServiceImpl implements SysRoleService {
     private SysRoleDao rsysRoleDao;
 
     @Override
-    public List<SysRole> getAll() throws Exception{
-        return rsysRoleDao.findAll();
+    public Page<SysRole> getAll(Pageable pageable) throws Exception{
+        return rsysRoleDao.findAll(pageable);
     }
 
     @Override

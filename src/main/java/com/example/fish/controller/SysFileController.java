@@ -4,6 +4,8 @@ import com.example.fish.api.SysFileApi;
 import com.example.fish.model.SysFile;
 import com.example.fish.service.SysFileService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -17,9 +19,9 @@ public class SysFileController implements SysFileApi {
     private SysFileService sysFileService;
 
     @Override
-    public List<SysFile> getAll() {
+    public Page<SysFile> getAll(Pageable pageable) {
         try {
-            return sysFileService.getAll();
+            return sysFileService.getAll(pageable);
         }catch (Exception e){
             e.printStackTrace();
             return null;

@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Data
 @ApiModel(description="文件")
 @Entity
-@Table(name = "t_file")
+@Table(name = "sys_file")
 @EqualsAndHashCode
 @GenericGenerator(name = "jpa-uuid", strategy = "uuid")
 @JsonIgnoreProperties(value = { "hibernateLazyInitializer"})

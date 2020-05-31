@@ -3,6 +3,8 @@ package com.example.fish.api;
 import com.example.fish.model.SysRole;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +18,7 @@ public interface SysRoleApi {
 
     @ApiOperation(value = "查询所有")
     @GetMapping("/getAll")
-    List<SysRole> getAll();
+    Page<SysRole> getAll(Pageable pageable);
 
     @ApiOperation(value = "查询一个")
     @GetMapping("/getById")

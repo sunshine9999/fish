@@ -3,12 +3,12 @@ package com.example.fish.service.impl;
 import com.example.fish.model.SysUser;
 import com.example.fish.repository.SysUserDao;
 import com.example.fish.service.SysUserService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class SysUserServiceImpl implements SysUserService {
@@ -19,8 +19,8 @@ public class SysUserServiceImpl implements SysUserService {
     private SysUserDao sysUserDao;
 
     @Override
-    public List<SysUser> getAll() throws Exception{
-        return sysUserDao.findAll();
+    public Page<SysUser> getAll(Pageable pageable) throws Exception{
+        return sysUserDao.findAll(pageable);
     }
 
     @Override

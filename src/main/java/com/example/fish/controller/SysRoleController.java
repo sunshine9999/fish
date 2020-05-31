@@ -4,6 +4,8 @@ import com.example.fish.api.SysRoleApi;
 import com.example.fish.model.SysRole;
 import com.example.fish.service.SysRoleService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -17,9 +19,9 @@ public class SysRoleController implements SysRoleApi {
     private SysRoleService sysRoleService;
 
     @Override
-    public List<SysRole> getAll() {
+    public Page<SysRole> getAll(Pageable pageable) {
         try {
-            return sysRoleService.getAll();
+            return sysRoleService.getAll(pageable);
         }catch (Exception e){
             e.printStackTrace();
             return null;

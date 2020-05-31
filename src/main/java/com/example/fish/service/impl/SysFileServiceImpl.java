@@ -3,12 +3,12 @@ package com.example.fish.service.impl;
 import com.example.fish.model.SysFile;
 import com.example.fish.repository.SysFileDao;
 import com.example.fish.service.SysFileService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import javax.annotation.Resource;
-import java.util.List;
 
 @Service
 public class SysFileServiceImpl implements SysFileService {
@@ -19,8 +19,8 @@ public class SysFileServiceImpl implements SysFileService {
     private SysFileDao sysFileDao;
 
     @Override
-    public List<SysFile> getAll() throws Exception{
-        return sysFileDao.findAll();
+    public Page<SysFile> getAll(Pageable pageable) throws Exception{
+        return sysFileDao.findAll(pageable);
     }
 
     @Override
