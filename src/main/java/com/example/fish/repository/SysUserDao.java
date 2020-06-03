@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface SysUserDao extends JpaRepository<SysUser,String> {
+
+    public SysUser findByUserAccountAndUserPassword(String userAccount, String userPassword);
+
 }

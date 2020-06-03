@@ -10,5 +10,6 @@ public interface SysUserService {
     public SysUser saveSysUser(SysUser user) throws Exception;
     public SysUser getById(String id) throws Exception;
     public void delSysUser(String id) throws Exception;
+    public SysUser findByUserAccountAndUserPassword(String userAccount, String userPassword) throws Exception;
 
 }

@@ -39,4 +39,9 @@ public class SysUserServiceImpl implements SysUserService {
     public void delSysUser(String id) throws Exception {
         sysUserDao.deleteById(id);
     }
+
+    @Override
+    public SysUser findByUserAccountAndUserPassword(String userAccount, String userPassword) throws Exception {
+        return sysUserDao.findByUserAccountAndUserPassword(userAccount,userPassword);
+    }
 }
