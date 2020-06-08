@@ -19,9 +19,11 @@ public class LoginController implements LoginApi {
     private SysUserService sysUserService;
 
     @Override
-    public ResultData sysLogin(String userAccount, String userPassword, HttpServletRequest httpServletRequest) {
+    public ResultData sysLogin(SysUser sysUser, HttpServletRequest httpServletRequest) {
         ResultData result = new ResultData();
         try{
+            String userAccount = sysUser.getUserAccount();
+            String userPassword = sysUser.getUserPassword();
             SysUser user = sysUserService.findByUserAccountAndUserPassword(userAccount,userPassword);
             if(user!=null){
                 result.setCode("200");

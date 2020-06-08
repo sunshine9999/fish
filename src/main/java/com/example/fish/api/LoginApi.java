@@ -1,5 +1,6 @@
 package com.example.fish.api;
 
+import com.example.fish.model.SysUser;
 import com.example.fish.util.ResultData;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -13,8 +14,7 @@ public interface LoginApi {
 
     @ApiOperation(value = "登录")
     @PostMapping("/sysLogin")
-    public ResultData sysLogin(@RequestParam(name = "userAccount", required = true) String userAccount,
-                               @RequestParam(name = "userPassword", required = true) String userPassword,
+    public ResultData sysLogin(@RequestBody SysUser sysUser,
                                HttpServletRequest httpServletRequest);
 
 }
